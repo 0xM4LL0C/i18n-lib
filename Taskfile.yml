@@ -21,6 +21,7 @@ tasks:
 
   dev-install:
     cmds:
+      - uv venv
       - uv sync --group dev
       - npm i cspell
 
@@ -40,4 +41,5 @@ tasks:
 
   docs-setup:
     cmds:
+      - uv venv
       - uv sync --group docs
