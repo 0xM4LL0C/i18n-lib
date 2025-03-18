@@ -1,0 +1,7 @@
+hello-world: hello world
+hello-name: hello {name}
+with-const: text {const:CONST_VAR} text
+with-func: text {func:func_call()} text
+with-obj: text {object.attr} text
+nested:
+  key: value

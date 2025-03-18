@@ -1,0 +1,43 @@
+# cspell: disable
+version: "3"
+
+tasks:
+  default:
+    - task: fix
+    - task: format
+
+  lint:
+    cmds:
+      - ruff check --respect-gitignore src
+      - mypy --strict src
+      - pyright src
+
+  format:
+    ignore_error: true
+    cmd: ruff format --respect-gitignore src
+
+  fix:
+    cmd: ruff check --respect-gitignore --fix src
+
+  dev-install:
+    cmds:
+      - uv sync --group dev
+      - npm i cspell
+
+  dev-setup:
+    deps:
+      - task: dev-install
+    cmds:
+      - pre-commit install
+
+  clean:
+    cmds:
+      - find . -type d -name "__pycache__" -exec rm -rf {} +
+      - rm -rf site release_body.md .*_cache *.log dist
+
+  release:
+    cmd: python3 tools/release.py {{.CLI_ARGS}}
+
+  docs-setup:
+    cmds:
+      - uv sync --group docs
