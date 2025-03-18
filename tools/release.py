@@ -58,9 +58,6 @@ if choice != "y":
 run_command("task lint && task format")
 
 
-with open("version", "w") as f:
-    f.write(str(version))
-
 with open("pyproject.toml", "r") as f:
     pyproject = toml.load(f).unwrap()
 pyproject["project"]["version"] = str(version)
