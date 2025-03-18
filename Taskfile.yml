@@ -8,16 +8,16 @@ tasks:
 
   lint:
     cmds:
-      - ruff check --respect-gitignore src
-      - mypy --strict src
-      - pyright src
+      - uv run ruff check --respect-gitignore src
+      - uv run mypy --strict src
+      - uv run pyright src
 
   format:
     ignore_error: true
-    cmd: ruff format --respect-gitignore src
+    cmd: uv run ruff format --respect-gitignore src
 
   fix:
-    cmd: ruff check --respect-gitignore --fix src
+    cmd: uv run ruff check --respect-gitignore --fix src
 
   dev-install:
     cmds:
@@ -28,7 +28,7 @@ tasks:
     deps:
       - task: dev-install
     cmds:
-      - pre-commit install
+      - uv run pre-commit install
 
   clean:
     cmds:
