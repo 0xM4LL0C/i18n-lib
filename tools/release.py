@@ -100,7 +100,7 @@ with open("release_body.md", "w") as f:
 
 run_command("rm -rf dist")
 run_command("uv build")
-run_command("uv publish publish")
+run_command("uv publish")
 run_command('git add . && git commit -a -m "bump version" && git push')
 
 run_command(
