@@ -7,8 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added new `StringFormatter` class in `i18n/formatter.py` for handling string formatting logic
+
+### Changed
+
+- Refactored `I18N` class to use new `StringFormatter` for string formatting
+
+### Fixed
+
+- Fixed string formatting error handling
+
 ## [0.1.0] - 2025-03-18
 
 ### Added
 
-- initial release
+- Initial release
