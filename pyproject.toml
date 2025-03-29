@@ -14,8 +14,8 @@ name = "Hamlet"
 email = "hamlets849@gmail.com"
 
 [project.urls]
-Homepage = "https://github.com/HamletSargsyan/i18n-lib"
-Documentation = "https://hamletsargsyan.github.io/i18n-lib/usage"
+Homepage = "https://github.com/0xM4LL0C/i18n-lib"
+Documentation = "https://0xM4LL0C.github.io/i18n-lib/usage"
 
 [build-system]
 requires = ["hatchling"]
